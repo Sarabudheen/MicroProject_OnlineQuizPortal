@@ -1,0 +1,42 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.navbar {
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: aliceblue;
+    color: #2f1793;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-width: 2px;
+    height: 12%;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+
+}
+
+.menu-items {
+    order: 2;
+    display: flex;
+
+}
+
+.menu-items li {
+    list-style: none;
+    margin-left: 1.5rem;
+    font-size: 1.3rem;
+    color: #2f1793;
+
+}
+
+
+.menu-items a {
+    color: #2f1793;
+    text-decoration: none;
+
+}

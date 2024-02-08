@@ -1,0 +1,126 @@
+<div matDialogTitle>
+    <h1 style="color:#2f1793">User Details</h1>
+</div>
+
+
+<form [formGroup]="userForm" id="userForm" (ngSubmit)="onSubmit()">
+    <div class="content">
+        <mat-dialog-content>
+            <div class="row">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>User Id</mat-label>
+                    <input type="number" matInput placeholder="Ex : 11957" formControlName="userId" name="id">
+                    <div *ngIf="userForm.get('userId')!.touched && userForm.get('userId')!.invalid">
+                        <div *ngIf="userForm.get('userId')!.hasError('required')">
+                            <font color="red">*id required</font>
+                        </div>
+                    </div>
+                </mat-form-field>
+
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter your First Name</mat-label>
+                    <input matInput autofocus type="text" placeholder="Ex : Sara" formControlName="firstName">
+                </mat-form-field>
+                <div *ngIf="userForm.get('firstName')!.touched && userForm.get('firstName')!.invalid">
+                    <div *ngIf="userForm.get('firstName')!.hasError('required')">
+                        <mat-error>First Name is Required.</mat-error>
+                    </div>
+                    <div *ngIf="userForm.get('firstName')!.hasError('pattern')">
+                        <mat-error>Invalid First Name</mat-error>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter your Last Name</mat-label>
+                    <input matInput placeholder="Ex : Ameer" formControlName="lastName">
+                </mat-form-field>
+                <div *ngIf="userForm.get('lastName')!.touched && userForm.get('lastName')!.invalid">
+                    <div *ngIf="userForm.get('lastName')!.hasError('required')">
+                        <mat-error>Last Name is Required.</mat-error>
+                    </div>
+                    <div *ngIf="userForm.get('lastName')!.hasError('pattern')">
+                        <mat-error>Invalid Last Name</mat-error>
+                    </div>
+                </div>
+
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter your Email ID</mat-label>
+                    <input matInput type="email" placeholder="Ex:sara@gmail.com" formControlName="emailId"><br>
+                </mat-form-field>
+                <div *ngIf="userForm.get('emailId')!.touched && userForm.get('emailId')!.invalid">
+                    <div *ngIf="userForm.get('emailId')!.hasError('required')">
+                        <mat-error>Email ID is Required</mat-error>>
+                    </div>
+                    <div *ngIf="userForm.get('emailId')!.hasError('pattern')">
+                        <mat-error>Invalid Email ID</mat-error>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter your Phone No</mat-label>
+                    <input matInput type="text" placeholder="Ex : 1234567890" formControlName="phoneNo">
+                </mat-form-field>
+                <div *ngIf="userForm.get('phoneNo')!.touched && userForm.get('phoneNo')!.invalid">
+                    <div *ngIf="userForm.get('phoneNo')!.hasError('required')">
+                        <mat-error>Phone No is Required.</mat-error>
+                    </div>
+                    <div *ngIf="userForm.get('phoneNo')!.hasError('pattern')">
+                        <mat-error>Invalid Phone No</mat-error>>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter your User Name</mat-label>
+                    <input matInput type="text" formControlName="userName" placeholder="Sara">
+                </mat-form-field>
+                <div *ngIf="userForm.get('userName')!.touched && userForm.get('userName')!.invalid">
+                    <div *ngIf="userForm.get('userName')!.hasError('required')">
+                        <mat-error>User Name is Required.</mat-error>
+                    </div>
+                    <div *ngIf="userForm.get('userName')!.hasError('pattern')">
+                        <mat-error>Invalid User Name</mat-error>>
+                    </div>
+
+                </div>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter your Password</mat-label>
+                    <input matInput type="password" formControlName="password">
+                </mat-form-field>
+                <div *ngIf="userForm.get('password')!.touched && userForm.get('password')!.invalid">
+                    <div *ngIf="userForm.get('password')!.hasError('required')">
+                        <mat-error>Password is Required.</mat-error>
+                    </div>
+                    <div *ngIf="userForm.get('password')!.hasError('pattern')">
+                        <mat-error>Invalid Password</mat-error>
+                    </div>
+
+                </div>
+            </div>
+        </mat-dialog-content>
+    </div>
+
+    <div class="action">
+        <mat-dialog-actions style="justify-content: end;">
+
+            <button mat-raised-button type="button" [matDialogClose]="false">Cancel</button>
+
+
+
+            <button mat-raised-button type="submit" value="submit" color="primary">{{data ? 'Update': 'Save'}} </button>
+        </mat-dialog-actions>
+    </div>
+</form>
