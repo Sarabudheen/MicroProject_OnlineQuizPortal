@@ -1,0 +1,99 @@
+<div matDialogTitle>
+    <h1 style="color:#2f1793">Schedule</h1>
+</div>
+
+
+<form [formGroup]="testForm" id="testForm" (ngSubmit)="onSubmit()">
+    <div class="content">
+        <mat-dialog-content>
+            <div class="row">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Test Id</mat-label>
+                    <input type="text" matInput formControlName="testId" name="id">
+                    <div *ngIf="testForm.get('testId')!.touched && testForm.get('testId')!.invalid">
+                        <div *ngIf="testForm.get('testId')!.hasError('required')">
+                            <mat-error>*id required</mat-error>
+                        </div>
+                        <div *ngIf="testForm.get('testId')!.hasError('pattern')">
+                            <mat-error>*invalid format</mat-error>
+                        </div>
+                    </div>
+                </mat-form-field>
+
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter your Topic Name</mat-label>
+                    <input matInput type="text" formControlName="topicName">
+                    <div *ngIf="testForm.get('topicName')!.touched && testForm.get('topicName')!.invalid">
+                        <div *ngIf="testForm.get('topicName')!.hasError('required')">
+                            <mat-error>Topic Name is Required.</mat-error>
+                        </div>
+                        <div *ngIf="testForm.get('topicName')!.hasError('pattern')">
+                            <mat-error><b>Invalid Topic Name</b> </mat-error>
+                        </div>
+                    </div>
+                </mat-form-field>
+
+            </div>
+
+            <div class="row">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter the Time</mat-label>
+                    <input matInput type="text" placeholder="Ex : 10:30:00" formControlName="time">
+                    <div *ngIf="testForm.get('time')!.touched && testForm.get('time')!.invalid">
+                        <div *ngIf="testForm.get('time')!.hasError('required')">
+                            <mat-error>Time is Required.</mat-error>
+                        </div>
+                    </div>
+                </mat-form-field>
+
+
+
+
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter Date</mat-label>
+                    <input matInput type="text" placeholder="Ex : 2024-02-08" formControlName="date">
+                    <div *ngIf="testForm.get('date')!.touched && testForm.get('date')!.invalid">
+                        <div *ngIf="testForm.get('date')!.hasError('required')">
+                            <mat-error>Date is Required.</mat-error>
+                        </div>
+                    </div>
+                </mat-form-field>
+
+            </div>
+            <div class="row">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter Dificulty Level</mat-label>
+                    <mat-select id="dificultyLevel" formControlName="dificulty">
+                        <mat-option value="Easy" id="easy">Easy</mat-option>
+                        <mat-option value="Medium" id="medium">Medium</mat-option>
+                        <mat-option value="Hard" id="hard">Hard</mat-option>
+                    </mat-select>
+                    <div *ngIf="testForm.get('dificulty')!.touched && testForm.get('dificulty')!.invalid">
+                        <div *ngIf="testForm.get('dificulty')!.hasError('required')">
+                            <mat-error>Dificulty Required.</mat-error>
+                        </div>
+                    </div>
+
+
+                </mat-form-field>
+            </div>
+
+        </mat-dialog-content>
+    </div>
+
+    <div class="action">
+        <mat-dialog-actions style="justify-content: end;">
+
+            <button mat-raised-button type="button" [matDialogClose]="false">Cancel</button>
+
+
+
+            <button mat-raised-button type="submit" value="submit" color="primary">{{data ? 'Update': 'Save'}} </button>
+        </mat-dialog-actions>
+    </div>
+</form>

@@ -1,0 +1,19 @@
+<p>Your Results</p>
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Test ID</th>
+            <th scope="col">Topic Name</th>
+            <th scope="col">Score</th>
+            <th scope="col">Feedback</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let result of resultList">
+            <td>{{result.reportId}}</td>
+            <td>{{result.topicName}}</td>
+            <td>{{result.score}}</td>
+            <td>{{result.feedBack}}</td>
+        </tr>
+    </tbody>
+</table>

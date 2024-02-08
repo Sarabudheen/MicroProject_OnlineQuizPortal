@@ -1,0 +1,66 @@
+<body>
+    <span class="title">Quiz? BEAST</span>
+    <div class="register-content">
+
+        <mat-card>
+            <mat-toolbar class="login-toolbar">LOGIN HERE</mat-toolbar>
+            <mat-card-content>
+
+                <form [formGroup]="myForm" id="myForm" (ngSubmit)="loginUser(myForm.value)"> <br><br>
+
+                    <table class="loginTable">
+                        <tr>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Enter your User Name</mat-label>
+                                    <input matInput type="text" formControlName="userName" placeholder="Ex.Sara">
+                                </mat-form-field>
+                                <div *ngIf="myForm.get('userName')!.touched && myForm.get('userName')!.invalid">
+                                    <div *ngIf="myForm.get('userName')!.hasError('required')">
+                                        <font color="red"><b>User Name is Required.</b></font>
+                                    </div>
+                                    <div *ngIf="myForm.get('userName')!.hasError('pattern')">
+                                        <font color="red"><b>Invalid User Name</b></font>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Enter your Password</mat-label>
+                                    <input matInput type="password" formControlName="password">
+                                </mat-form-field>
+                                <div *ngIf="myForm.get('password')!.touched && myForm.get('password')!.invalid">
+                                    <div *ngIf="myForm.get('password')!.hasError('required')">
+                                        <font color="red"><b>Password is Required.</b></font>
+                                    </div>
+                                    <div *ngIf="myForm.get('password')!.hasError('pattern')">
+                                        <font color="red"><b>Invalid Password</b></font>
+                                    </div>
+
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="loginActions">
+                                    <button class="loginButton" type="button" mat-raised-button
+                                        (click)="loginUser(myForm.value)">Login</button>&nbsp;&nbsp;
+                                    <button class="resetButton" type="reset" mat-raised-button>Reset</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                New User? &nbsp;&nbsp;<a routerLink="/Register">Register</a>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</body>

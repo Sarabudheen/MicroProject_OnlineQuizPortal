@@ -1,0 +1,41 @@
+.login-toolbar{
+    background-color: aliceblue;
+    color: #2f1793;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: x-large;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+mat-card{
+    max-width: 400px;
+    align-items: center;
+    border-width: 2px;
+    border-radius: 20px;
+    border-color: aliceblue;
+    margin-left: 37%;
+    margin-top: 7%;
+}
+
+
+mat-card-content{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+input{
+    width: 5cm;
+    height: 1cm;
+}
+button{
+    width: 2.5cm;
+    height: 1cm;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.title{
+    color: aliceblue;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 10%;
+    margin-left: 40%;
+}

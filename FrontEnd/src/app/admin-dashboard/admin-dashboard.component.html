@@ -1,0 +1,60 @@
+<span class="title">Welcome My Admid!!!</span>
+
+<div>
+    
+<mat-grid-list cols="4">
+    <mat-grid-tile>
+        <mat-card class="users-card">
+            <mat-toolbar class="card-toolbar">USERS</mat-toolbar><br>
+          <img mat-card-image src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Photo of users" style="width: 40%;"><br>
+       
+          <mat-card-actions>
+            <button mat-button  mat-raised-button routerLink="/Users">Manage Users</button>
+          </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-card class="topic-card">
+                <mat-toolbar class="card-toolbar">TOPICS</mat-toolbar><br>
+              <img mat-card-image src="https://dave-albert.com/images/posts/topics-2659822_orig.jpg" alt="Photo of users" style="width: 50%;"><br><br>
+           
+              <mat-card-actions>
+                <button mat-button  mat-raised-button routerLink="/Topics">Manage Topics</button>
+              </mat-card-actions>
+            </mat-card>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-card class="quiz-card">
+                <mat-toolbar class="card-toolbar">QUIZZES</mat-toolbar><br>
+              <img mat-card-image src="https://media.istockphoto.com/id/1204641429/vector/quiz-concept-quiz-word-vector-illustration.jpg?s=612x612&w=0&k=20&c=zf3m-drKzoYp9g7Ko_i_yy-tUpwGtvIcp16YWXDMSYo=" alt="Photo of users" style="width: 50%;"><br><br>
+              <mat-card-actions>
+                <button mat-button  mat-raised-button [routerLink]="['/Questions']">Quizzes </button>
+              </mat-card-actions>
+            </mat-card>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-card class="report-card">
+                <mat-toolbar class="card-toolbar">REPORTS</mat-toolbar><br>
+              <img mat-card-image src="https://suncityaz.org/wp-content/uploads/2016/06/Marketing-Analysis.png" alt="Photo of users" style="width: 35%;"><br><br>
+              <mat-card-actions>
+                <button mat-button  mat-raised-button (click)="routeReports()">Manage Reports</button>
+              </mat-card-actions>
+            </mat-card>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-card class="schedule-card">
+                <mat-toolbar class="card-toolbar">SCHEDULE</mat-toolbar><br>
+              <img mat-card-image src="https://cdn-icons-png.flaticon.com/512/3774/3774493.png" alt="Photo of users" style="width: 40%;"><br><br>
+              <mat-card-actions>
+                <button mat-button  mat-raised-button routerLink="/Schedule">Schedule Quiz</button>
+              </mat-card-actions>
+            </mat-card>
+        </mat-grid-tile>
+
+
+</mat-grid-list>
+</div>

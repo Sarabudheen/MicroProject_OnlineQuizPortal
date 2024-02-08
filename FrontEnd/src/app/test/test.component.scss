@@ -1,0 +1,47 @@
+mat-card {
+    height: max-content;
+    width: 20cm;
+    align-items: center;
+    border-width: 2px;
+    border-radius: 20px;
+    border-color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-left: 25%;
+    justify-content: left;
+}
+
+.questions {
+    margin-top: 3%;
+}
+
+label {
+    text-align: center;
+    background-color: black;
+    border-width: 1px;
+    width: 20cm;
+    height: 1cm;
+    color: aliceblue;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.submitButton {
+    margin-left: 47%;
+}
+
+p {
+    color: black;
+    margin-top: 10%;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+svg {
+    height: 30px;
+    width: 30px;
+    margin-bottom: 10px;
+}

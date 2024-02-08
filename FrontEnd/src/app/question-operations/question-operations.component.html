@@ -1,0 +1,124 @@
+<div matDialogTitle>
+    <h1 style="color:#2f1793">Quiz Details</h1>
+</div>
+
+
+<form [formGroup]="quizForm" id="quizForm" (ngSubmit)="onSubmit()">
+    <div class="content">
+        <mat-dialog-content>
+            <div class="row">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Quiz Id</mat-label>
+                    <input type="text" matInput formControlName="quizId" name="id">
+                    <div *ngIf="quizForm.get('quizId')!.touched && quizForm.get('quizId')!.invalid">
+                        <div *ngIf="quizForm.get('quizId')!.hasError('required')">
+                            <mat-error>*id required</mat-error>
+                        </div>
+                        <div *ngIf="quizForm.get('quizId')!.hasError('pattern')">
+                            <mat-error>*invalid format</mat-error>
+                        </div>
+                    </div>
+                </mat-form-field>
+
+
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Topic ID</mat-label>
+                    <input matInput autofocus type="text" formControlName="topicId">
+                </mat-form-field>
+                <div *ngIf="quizForm.get('topicId')!.touched && quizForm.get('topicId')!.invalid">
+                    <div *ngIf="quizForm.get('topicId')!.hasError('required')">
+                        <mat-error>Topic Id is Required.</mat-error>
+                    </div>
+                    <div *ngIf="quizForm.get('topicId')!.hasError('pattern')">
+                        <mat-error>Invalid Topic Id </mat-error>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Quiz</mat-label>
+                    <input matInput formControlName="quiz">
+                </mat-form-field>
+                <div *ngIf="quizForm.get('quiz')!.touched && quizForm.get('quiz')!.invalid">
+                    <div *ngIf="quizForm.get('quiz')!.hasError('required')">
+                        <mat-error>Quiz is Required.</mat-error>
+                    </div>
+                </div>
+
+
+
+
+                <mat-form-field appearance="outline">
+                    <mat-label>First Option</mat-label>
+                    <input matInput type="text" formControlName="firstOption"><br>
+                </mat-form-field>
+                <div *ngIf="quizForm.get('firstOption')!.touched && quizForm.get('firstOption')!.invalid">
+                    <div *ngIf="quizForm.get('firstOption')!.hasError('required')">
+                        <mat-error>Option are Required</mat-error>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Second Option</mat-label>
+                    <input matInput type="text" formControlName="secondOption">
+                </mat-form-field>
+
+                <div *ngIf="quizForm.get('secondOption')!.touched && quizForm.get('secondOption')!.invalid">
+                    <div *ngIf="quizForm.get('secondOption')!.hasError('required')">
+                        <mat-error>Option are Required</mat-error>
+                    </div>
+                </div>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Third Option</mat-label>
+                    <input matInput type="text" formControlName="thirdOption">
+                </mat-form-field>
+                <div *ngIf="quizForm.get('thirdOption')!.touched && quizForm.get('thirdOption')!.invalid">
+                    <div *ngIf="quizForm.get('thirdOption')!.hasError('required')">
+                        <mat-error>Option are Required</mat-error>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>Fourth Option</mat-label>
+                    <input matInput type="text" formControlName="fourthOption">
+                </mat-form-field>
+                <div *ngIf="quizForm.get('fourthOption')!.touched && quizForm.get('fourthOption')!.invalid">
+                    <div *ngIf="quizForm.get('fourthOption')!.hasError('required')">
+                        <mat-error>Option are Required</mat-error>
+                    </div>
+                </div>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Answer</mat-label>
+                    <input matInput type="text" formControlName="answer">
+                </mat-form-field>
+                <div *ngIf="quizForm.get('answer')!.touched && quizForm.get('answer')!.invalid">
+                    <div *ngIf="quizForm.get('answer')!.hasError('required')">
+                        <mat-error>Answer Required</mat-error>
+                    </div>
+
+                </div>
+            </div>
+        </mat-dialog-content>
+    </div>
+
+    <div class="action">
+        <mat-dialog-actions style="justify-content: end;">
+
+            <button mat-raised-button type="button" [matDialogClose]="false">Cancel</button>
+
+
+            <button mat-raised-button type="submit" value="submit" color="primary">{{data ? 'Update': 'Save'}} </button>
+        </mat-dialog-actions>
+    </div>
+</form>

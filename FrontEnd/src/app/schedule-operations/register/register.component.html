@@ -1,0 +1,134 @@
+<span class="title">Quiz? BEAST</span>
+<div class="register-content">
+
+    <mat-card>
+        <mat-toolbar class="register-toolbar">REGISTER</mat-toolbar>
+        <mat-card-content>
+            <form [formGroup]="myForm" id="myForm" (ngSubmit)="register(myForm.value)"> <br>
+                <table class="registerTable">
+                    <tr>
+                        <td>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Enter your First Name</mat-label>
+                                <input matInput autofocus type="text" placeholder="Sara" formControlName="firstName">
+                            </mat-form-field>
+                            <div *ngIf="myForm.get('firstName')!.touched && myForm.get('firstName')!.invalid">
+                                <div *ngIf="myForm.get('firstName')!.hasError('required')">
+                                    <font color="red"><b>First Name is Required.</b></font>
+                                </div>
+                                <div *ngIf="myForm.get('firstName')!.hasError('pattern')">
+                                    <mat-error><b>Invalid First Name</b> </mat-error>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Enter your Last Name</mat-label>
+                                <input matInput placeholder="Ameer" formControlName="lastName">
+                            </mat-form-field>
+                            <div *ngIf="myForm.get('lastName')!.touched && myForm.get('lastName')!.invalid">
+                                <div *ngIf="myForm.get('lastName')!.hasError('required')">
+                                    <font color="red"><b>Last Name is Required.</b></font>
+                                </div>
+                                <div *ngIf="myForm.get('lastName')!.hasError('pattern')">
+                                    <font color="red"><b>Invalid Last Name</b></font>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Enter your Email ID</mat-label>
+                                <input matInput type="email" placeholder="sara@gmail.com" formControlName="emailId"><br>
+                            </mat-form-field>
+                            <div *ngIf="myForm.get('emailId')!.touched && myForm.get('emailId')!.invalid">
+                                <div *ngIf="myForm.get('emailId')!.hasError('required')">
+                                    <font color="red"><b>Email ID is Required.</b></font>
+                                </div>
+                                <div *ngIf="myForm.get('emailId')!.hasError('pattern')">
+                                    <font color="red"><b>Invalid Email ID</b></font>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Enter your Phone No</mat-label>
+                                <input matInput type="text" placeholder="7010436645" formControlName="phoneNo">
+                            </mat-form-field>
+                            <div *ngIf="myForm.get('phoneNo')!.touched && myForm.get('phoneNo')!.invalid">
+                                <div *ngIf="myForm.get('phoneNo')!.hasError('required')">
+                                    <font color="red"><b>Phone No is Required.</b></font>
+                                </div>
+                                <div *ngIf="myForm.get('phoneNo')!.hasError('pattern')">
+                                    <font color="red"><b>Invalid Phone No</b></font>
+                                </div>
+
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Enter your User Name</mat-label>
+                                <input matInput type="text" formControlName="userName" placeholder="Sara">
+                            </mat-form-field>
+                            <div *ngIf="myForm.get('userName')!.touched && myForm.get('userName')!.invalid">
+                                <div *ngIf="myForm.get('userName')!.hasError('required')">
+                                    <font color="red"><b>User Name is Required.</b></font>
+                                </div>
+                                <div *ngIf="myForm.get('userName')!.hasError('pattern')">
+                                    <font color="red"><b>Invalid User Name</b></font>
+                                </div>
+
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Enter your Password</mat-label>
+                                <input matInput type="password" formControlName="password">
+                            </mat-form-field>
+                            <div *ngIf="myForm.get('password')!.touched && myForm.get('password')!.invalid">
+                                <div *ngIf="myForm.get('password')!.hasError('required')">
+                                    <font color="red"><b>Password is Required.</b></font>
+                                </div>
+                                <div *ngIf="myForm.get('password')!.hasError('pattern')">
+                                    <font color="red"><b>Invalid Password</b></font>
+                                </div>
+
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="registerActions">
+                                <button class="registerButton" type="button" [disabled]="myForm.invalid"
+                                    mat-raised-button (click)="registerUser(myForm.value)">Register</button>&nbsp;&nbsp;
+                                <button class="resetButton" [disabled]="myForm.invalid" type="reset"
+                                    mat-raised-button>Reset</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Already an User? &nbsp;&nbsp;<a routerLink="/Login">Login</a>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <font id="result"><b>{{result}}</b></font>
+        </mat-card-content>
+    </mat-card>
+</div>

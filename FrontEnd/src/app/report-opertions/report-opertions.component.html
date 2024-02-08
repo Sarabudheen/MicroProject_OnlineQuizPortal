@@ -1,0 +1,105 @@
+<div class="container-fixed">
+    <div matDialogTitle>
+        <h1 style="color:blue">All Reports</h1>
+    </div>
+
+
+    <form [formGroup]="reportForm" id="reportForm" (ngSubmit)="onSubmit()">
+        <div class="content">
+            <mat-dialog-content>
+                <div class="row">
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Report Id</mat-label>
+                        <input type="number" matInput formControlName="reportId" name="id">
+                        <div *ngIf="reportForm.get('reportId')!.touched && reportForm.get('reportId')!.invalid">
+                            <div *ngIf="reportForm.get('reportId')!.hasError('required')">
+                                <mat-error>*id required</mat-error>
+                            </div>
+                            <div *ngIf="reportForm.get('reportId')!.hasError('pattern')">
+                                <mat-error>*invalid format</mat-error>
+                            </div>
+                        </div>
+                    </mat-form-field>
+
+
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>User Id</mat-label>
+                        <input matInput autofocus type="text" formControlName="userId">
+                    </mat-form-field>
+                    <div *ngIf="reportForm.get('userId')!.touched && reportForm.get('userId')!.invalid">
+                        <div *ngIf="reportForm.get('userId')!.hasError('required')">
+                            <mat-error>User Id is Required</mat-error>
+                        </div>
+                        <div *ngIf="reportForm.get('userId')!.hasError('pattern')">
+                            <mat-error>Invalid User Id</mat-error>>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Topic Name</mat-label>
+                        <input matInput formControlName="topicName">
+                    </mat-form-field>
+                    <div *ngIf="reportForm.get('topicName')!.touched && reportForm.get('topicName')!.invalid">
+                        <div *ngIf="reportForm.get('topicName')!.hasError('required')">
+                            <mat-error>Topic Name is Required</mat-error>
+                        </div>
+                        <div *ngIf="reportForm.get('topicName')!.hasError('pattern')">
+                            <mat-error>Invalid Topic Name</mat-error>
+                        </div>
+                    </div>
+
+
+
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Score</mat-label>
+                        <input matInput type="text" formControlName="score"><br>
+                    </mat-form-field>
+                    <div *ngIf="reportForm.get('score')!.touched && reportForm.get('score')!.invalid">
+                        <div *ngIf="reportForm.get('score')!.hasError('required')">
+                            <mat-error>Score is Required.</mat-error>>
+                        </div>
+                        <div *ngIf="reportForm.get('score')!.hasError('pattern')">
+                            <mat-error>Invalid Score</mat-error>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>FeedBack</mat-label>
+                        <input matInput type="textarea" formControlName="feedBack">
+                    </mat-form-field>
+                    <div *ngIf="reportForm.get('feedBack')!.touched && reportForm.get('feedBack')!.invalid">
+                        <div *ngIf="reportForm.get('feedBack')!.hasError('required')">
+                            <mat-error>Feedback is Required</mat-error>
+                        </div>
+                        <div *ngIf="reportForm.get('feedBack')!.hasError('pattern')">
+                            <mat-error>Invalid Feedback</mat-error>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </mat-dialog-content>
+        </div>
+
+        <div class="action">
+            <mat-dialog-actions style="justify-content: end;">
+
+                <button mat-raised-button type="button" [matDialogClose]="false">Cancel</button>
+
+
+
+                <button mat-raised-button type="submit" value="submit" color="primary">{{data ? 'Update': 'Save'}}
+                </button>
+            </mat-dialog-actions>
+        </div>
+    </form>

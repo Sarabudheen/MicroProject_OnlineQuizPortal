@@ -1,0 +1,39 @@
+.sidebar-slider{
+    background-color: #8F00FF;
+    position: fixed;
+    top: 9%;
+    left: 0;
+    bottom: 0;
+}
+
+mat-card{
+    height: 7cm;
+    width: 7cm;
+    align-items: center;
+}
+
+mat-toolbar{
+    background-color: aliceblue;
+    color: #2f1793;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: x-large;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+mat-card{
+    border-width: 2px;
+    border-radius: 20px;
+    border-color: aliceblue;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.title{
+    color: aliceblue;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 10%;
+    margin-left: 40%;
+}

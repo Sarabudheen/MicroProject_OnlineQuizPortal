@@ -1,0 +1,84 @@
+<div class="container-fixed">
+
+
+
+  <div class="table-container">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+
+
+      <ng-container matColumnDef="quizId">
+        <th mat-header-cell *matHeaderCellDef> Quiz ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.quizId}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="topicId">
+        <th mat-header-cell *matHeaderCellDef> Topic ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.topicId}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="quiz">
+        <th mat-header-cell *matHeaderCellDef> Quiz </th>
+        <td mat-cell *matCellDef="let row"> {{row.quiz}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="firstOption">
+        <th mat-header-cell *matHeaderCellDef> First Option</th>
+        <td mat-cell *matCellDef="let row"> {{row.firstOption}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="secondOption">
+        <th mat-header-cell *matHeaderCellDef> Second Option </th>
+        <td mat-cell *matCellDef="let row"> {{row.secondOption}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="thirdOption">
+        <th mat-header-cell *matHeaderCellDef> Third Option </th>
+        <td mat-cell *matCellDef="let row"> {{row.thirdOption}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="fourthOption">
+        <th mat-header-cell *matHeaderCellDef> Fourth option </th>
+        <td mat-cell *matCellDef="let row"> {{row.fourthOption}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="answer">
+        <th mat-header-cell *matHeaderCellDef> Answer </th>
+        <td mat-cell *matCellDef="let row"> {{row.answer}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let row">
+          <button mat-button color="primary" (click)="updateQuiz(row)" value="edit">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-button color="warn" (click)="deleteQuiz(row.quidId)" value="delete">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>
+
+<div class="file">
+  <label class="btn bth-default">
+    <input type="file" (change)="fileSelect($event)">
+  </label><br>
+
+  <button mat-raised-button (click)="onUpload()" color="warn">Upload File</button>
+</div>

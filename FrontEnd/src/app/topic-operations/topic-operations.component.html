@@ -1,0 +1,51 @@
+<div matDialogTitle>
+    <h1 style="color:#2f1793">Update Topic</h1>
+</div>
+
+
+<form [formGroup]="topicsForm" id="topicsForm" (ngSubmit)="onSubmit()">
+    <div class="content">
+        <mat-dialog-content>
+            <div class="row">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Topic Id</mat-label>
+                    <input type="text" matInput placeholder="Ex : 1" formControlName="topicId" name="id">
+                    <div *ngIf="topicsForm.get('topicId')!.touched && topicsForm.get('topicId')!.invalid">
+                        <div *ngIf="topicsForm.get('topicId')!.hasError('required')">
+                            <mat-error>*id required</mat-error>
+                        </div>
+                        <div *ngIf="topicsForm.get('topicId')!.hasError('pattern')">
+                            <mat-error>*invalid format</mat-error>
+                        </div>
+                    </div>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Topic Name</mat-label>
+                    <input matInput autofocus type="text" placeholder="Ex : JAVA" formControlName="topicName">
+                </mat-form-field>
+                <div *ngIf="topicsForm.get('topicName')!.touched && topicsForm.get('topicName')!.invalid">
+                    <div *ngIf="topicsForm.get('topicName')!.hasError('required')">
+                        <mat-error>Topic Name is Required.</mat-error>
+                    </div>
+                    <div *ngIf="topicsForm.get('topicName')!.hasError('pattern')">
+                        <mat-error>Invalid Topic Name</mat-error>
+                    </div>
+                </div>
+            </div>
+
+
+        </mat-dialog-content>
+    </div>
+
+    <div class="action">
+        <mat-dialog-actions style="justify-content: end;">
+
+            <button mat-raised-button type="button" [matDialogClose]="false">Cancel</button>
+
+
+            <button mat-raised-button type="submit" value="submit" color="primary">{{data ? 'Update': 'Save'}} </button>
+        </mat-dialog-actions>
+    </div>
+</form>
