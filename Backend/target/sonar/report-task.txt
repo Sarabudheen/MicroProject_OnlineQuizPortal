@@ -1,6 +1,0 @@
-projectKey=Online_Quiz_Portal
-serverUrl=http://localhost:9000
-serverVersion=9.9.3.79811
-dashboardUrl=http://localhost:9000/dashboard?id=Online_Quiz_Portal
-ceTaskId=AY2JWaAAOwBHzW57r9Ki
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AY2JWaAAOwBHzW57r9Ki
